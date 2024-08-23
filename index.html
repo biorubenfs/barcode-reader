@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Javascript Barcode Reader</title>
+    <meta charset="UTF-8" />
+</head>
+
+<body>
+    <!-- Method 1 - Using JS in a separated file -->
+    <div id="ean-13">
+        <h2 class="title">Scan barcode from EAN-13</h2>
+        <div>
+            <a class="button decodeButton">Decode</a>
+        </div>
+        <div>
+            <img id="image" class="img" src="./src/example-images/example-04.jpg" style="border: 1px solid gray" />
+        </div>
+        <label>Result:</label>
+        <blockquote>
+            <p id="result" class="result"></p>
+        </blockquote>
+    </div>
+
+    <script src="./dist/bundle.js"></script>
+
+    <!-- Method 2 - Using embebbed script -->
+    <!-- <script src="./src/index.js"></script> -->
+    <!-- <script type="text/javascript" src="https://unpkg.com/@zxing/library@latest"></script>
+    <script>
+
+        const codeReader = new ZXing.BrowserBarcodeReader();
+
+        console.log('ZXing code reader initialized');
+
+        const img = document.getElementById("image")
+        const resultEl = document.getElementById("result")
+
+        codeReader.decodeFromImage(img)
+            .then(result => {
+                console.log(result)
+                resultEl.textContent = result.text
+            })
+            .catch(err => {
+                console.error(err);
+                resultEl.textContent = err;
+            });
+
+    </script> -->
+</body>
+
+</html>
